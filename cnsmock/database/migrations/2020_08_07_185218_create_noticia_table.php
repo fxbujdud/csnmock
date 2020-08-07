@@ -18,7 +18,7 @@ class CreateNoticiaTable extends Migration
             $table->string('title');
             $table->longText('summary');
             $table->longText('content');
-            $table->string('url_normalized');
+            $table->string('url_normalized')->nullable(true);
             $table->timestamps();
         });
     }

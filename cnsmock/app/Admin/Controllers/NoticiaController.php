@@ -29,11 +29,10 @@ class NoticiaController extends AdminController
     $grid->column('id', __('Id'));
     $grid->column('title', __('Title'));
     $grid->column('summary', __('Summary'));
-    $grid->column('content', __('Content'));
     $grid->column('url_normalized', __('Url normalized'));
     $grid->column('created_at', __('Created at'));
-    $grid->column('updated_at', __('Updated at'));
 
+      
     return $grid;
   }
 
@@ -67,10 +66,9 @@ class NoticiaController extends AdminController
   {
     $form = new Form(new Noticia());
 
-    $form->text('title', __('Title'));
-    $form->textarea('summary', __('Summary'));
-    $form->textarea('content', __('Content'));
-    $form->text('url_normalized', __('Url normalized'));
+    $form->text('title', 'Titulo');
+    $form->textarea('summary', 'Resumen');
+    $form->textarea('content', 'Contenido');
 
     return $form;
   }
