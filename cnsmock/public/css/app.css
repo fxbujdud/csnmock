@@ -10905,6 +10905,33 @@ a.text-dark:focus {
 }
 
 nav {
-  background-color: black;
+  background-color: #001b72;
+  height: 4em;
+}
+
+nav * {
+  color: white;
+}
+
+nav img {
+  width: 25%;
+}
+
+.banner-pin {
+  border-radius: 50%;
+}
+
+footer {
+  background-color: whitesmoke;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.card {
+  width: 18em;
+}
+
+.card .card-img-top {
+  max-width: 150px !important;
 }
 

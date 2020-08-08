@@ -7,6 +7,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use PhpParser\Node\Expr\Cast\String_;
 
 class NoticiaController extends AdminController
 {
@@ -22,8 +23,7 @@ class NoticiaController extends AdminController
    *
    * @return Grid
    */
-  protected function grid()
-  {
+  protected function grid() {
     $grid = new Grid(new Noticia());
 
     $grid->column('id', __('Id'));
@@ -32,7 +32,7 @@ class NoticiaController extends AdminController
     $grid->column('url_normalized', __('Url normalized'));
     $grid->column('created_at', __('Created at'));
 
-      
+
     return $grid;
   }
 
@@ -42,8 +42,7 @@ class NoticiaController extends AdminController
    * @param mixed $id
    * @return Show
    */
-  protected function detail($id)
-  {
+  protected function detail($id) {
     $show = new Show(Noticia::findOrFail($id));
 
     $show->field('id', __('Id'));
@@ -62,18 +61,24 @@ class NoticiaController extends AdminController
    *
    * @return Form
    */
-  protected function form()
-  {
+  protected function form() {
     $form = new Form(new Noticia());
 
     $form->text('title', 'Titulo');
     $form->textarea('summary', 'Resumen');
     $form->textarea('content', 'Contenido');
 
+    $form->text('title');
+
+    $form->saving(function (Form $form) {
+      $form->url_normalized = urlencode($form->title);
+    });
+
     return $form;
   }
 
   public function getNotices() {
-    
+
   }
+
 }

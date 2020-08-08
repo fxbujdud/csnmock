@@ -3,73 +3,37 @@
 
 <head>
   <title>Portada</title>
+  <script src="{{ mix('js/app.js') }}"></script>
   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 </head>
 
 <body>
 
-  <nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-      <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-      <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+  <nav class="row site-header sticky-top py-1 justify-content-start">
+    <div class="col-sm-2 m-3">
+      <img src="http://localhost:8000/images/newspaper.png" class="banner-pin">
+    </div>
+    <a class="py-2 col-sm-4 d-none d-md-inline-block">CNSMOCK</a>
+    <div class="col-sm-4 row">
+      <a class="py-2 col-sm-4 d-none d-md-inline-block" href="#">INICIO</a>
     </div>
   </nav>
 
-  <dvi class="container py-5">
+  <div class="container d-flex flex-row flex-wrap d-flex justify-content-around">
     @yield('content-page')
-  </dvi>
+  </div>
 
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
-          <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
-          <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
-          <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
-          <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
-          <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
-        </svg>
-        <small class="d-block mb-3 text-muted">© 2017-2018</small>
+  <footer class="py-1">
+    <div class="row justify-content-between">
+      <div class="col-sm-4">
+        <img src="http://localhost:8000/images/newspaper.png" class="banner-pin">
+        <small class="d-block mb-3 text-muted">© 2020 Todos los derechos resevados</small>
       </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
+      <div class="col-sm-5">
+        <h5>Nuestro contenido</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Resource</a></li>
-          <li><a class="text-muted" href="#">Resource name</a></li>
-          <li><a class="text-muted" href="#">Another resource</a></li>
-          <li><a class="text-muted" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Business</a></li>
-          <li><a class="text-muted" href="#">Education</a></li>
-          <li><a class="text-muted" href="#">Government</a></li>
-          <li><a class="text-muted" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Locations</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
+          <li><a class="text-muted" href="#">En primer plana</a></li>
+          <li><a class="text-muted" href="#">Mas noticias</a></li>
         </ul>
       </div>
     </div>

@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'NoticiaController@getLastTenNotes');
+Route::get('search', 'NoticiaController@moreNotes');
