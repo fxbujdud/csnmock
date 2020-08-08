@@ -67,13 +67,12 @@ class NoticiaController extends AdminController
     $form->text('title', 'Titulo');
     $form->textarea('summary', 'Resumen');
     $form->textarea('content', 'Contenido');
-
-    $form->text('title');
-
-    $form->saving(function (Form $form) {
-      $form->url_normalized = urlencode($form->title);
+    $form->footer(function ($footer) {
+      $footer->disableReset();
+      $footer->disableViewCheck();
+      $footer->disableEditingCheck();
+      $footer->disableCreatingCheck();
     });
-
     return $form;
   }
 
